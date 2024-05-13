@@ -1,3 +1,7 @@
+// Images
+import banner1 from "../assets/imgs/fearchouli-plus-banner.png";
+import banner2 from "../assets/imgs/viora-hoodie-banner.jpg";
+import banner3 from "../assets/imgs/powr-hoodies-banner.jpg";
 // Splide Slider
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
@@ -44,10 +48,7 @@ export default function Hero() {
           <SplideSlide>
             <figure className="image-container">
               <Link to="/store/24">
-                <img
-                  src="src/assets/imgs/fearchouli-plus-banner.png"
-                  alt="Fearchouli Plus Perfume"
-                />
+                <img src={banner1} alt="Fearchouli Plus Perfume" />
               </Link>
             </figure>
           </SplideSlide>
@@ -55,10 +56,7 @@ export default function Hero() {
           <SplideSlide>
             <figure className="image-container">
               <Link to="/store/16">
-                <img
-                  src="src/assets/imgs/viora-hoodie-banner.jpg"
-                  alt="Viora Hoodie"
-                />
+                <img src={banner2} alt="Viora Hoodie" />
               </Link>
             </figure>
           </SplideSlide>
@@ -66,10 +64,7 @@ export default function Hero() {
           <SplideSlide>
             <figure className="image-container">
               <Link to="/store/91">
-                <img
-                  src="src/assets/imgs/powr-hoodies-banner.jpg"
-                  alt="POWR Hoodies"
-                />
+                <img src={banner3} alt="POWR Hoodies" />
               </Link>
             </figure>
           </SplideSlide>

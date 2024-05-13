@@ -1,3 +1,5 @@
+// Images
+import logo from "../assets/imgs/logo.jpg";
 // React Router Components & Hooks
 import { Link, NavLink } from "react-router-dom";
 // React JSX Components
@@ -18,7 +20,7 @@ export default function MainHeader() {
     <div className="main-header">
       <div className="container">
         <Link to="/" className="logo">
-          <img src="src/assets/imgs/logo.jpg" alt="POWR eSports" />
+          <img src={logo} alt="POWR eSports" />
         </Link>
 
         <SearchBar />

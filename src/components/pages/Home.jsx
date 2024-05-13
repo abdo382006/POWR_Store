@@ -1,3 +1,14 @@
+// Images
+import banner1 from "../../assets/imgs/maksora-banner.jpg";
+import banner2 from "../../assets/imgs/sumou-prime-banner.jpg";
+import banner3 from "../../assets/imgs/glorious-banner.jpg";
+import banner4 from "../../assets/imgs/sxb-dragon-hoodie-banner.jpg";
+import banner5 from "../../assets/imgs/rr-hoodie.jpg";
+import banner6 from "../../assets/imgs/royal-banner.jpg";
+import banner7 from "../../assets/imgs/powr-perfume-banner.jpg";
+import banner8 from "../../assets/imgs/b7-brooch-banner.jpg";
+import banner9 from "../../assets/imgs/c7-brooch-banner.jpg";
+import banner10 from "../../assets/imgs/frs-brooch-banner.jpg";
 // React JSX Components
 import Hero from "../Hero";
 import Features from "../Features";
@@ -13,58 +24,58 @@ export default function Home() {
     {
       id: 1,
       title: "Kamstka Perfume",
-      src: "src/assets/imgs/maksora-banner.jpg",
+      src: banner1,
     },
     {
       id: 32,
       title: "Sumou Prime Perfume",
-      src: "src/assets/imgs/sumou-prime-banner.jpg",
+      src: banner2,
     },
     {
       id: 21,
       title: "Glorious Perfume",
-      src: "src/assets/imgs/glorious-banner.jpg",
+      src: banner3,
     },
   ];
   const imgs2 = [
     {
       id: 19,
       title: "SXB Dragon Hoodie",
-      src: "src/assets/imgs/sxb-dragon-hoodie-banner.jpg",
+      src: banner4,
     },
     {
       id: 13,
       title: "RR Hoodie",
-      src: "src/assets/imgs/rr-hoodie.jpg",
+      src: banner5,
     },
   ];
   const imgs3 = [
     {
       id: 33,
       title: "Royal Perfume",
-      src: "src/assets/imgs/royal-banner.jpg",
+      src: banner6,
     },
     {
       id: 35,
       title: "POWR 13Years Perfume",
-      src: "src/assets/imgs/powr-perfume-banner.jpg",
+      src: banner7,
     },
   ];
   const imgs4 = [
     {
       id: 66,
       title: "B7 Brooch",
-      src: "src/assets/imgs/b7-brooch-banner.jpg",
+      src: banner8,
     },
     {
       id: 71,
       title: "C7 Brooch",
-      src: "src/assets/imgs/c7-brooch-banner.jpg",
+      src: banner9,
     },
     {
       id: 74,
       title: "FRS Brooch",
-      src: "src/assets/imgs/frs-brooch-banner.jpg",
+      src: banner10,
     },
   ];
   const { allProducts } = useContext(ProductsContext);

@@ -59,7 +59,7 @@ export default function Cart() {
             </div>
             <div className="footer">
               <h3>
-                Subtotal:{" "}
+                Subtotal:
                 <span>
                   {currency} {subtotalPrice.toFixed(2)}
                 </span>

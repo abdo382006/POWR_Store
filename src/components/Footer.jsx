@@ -1,3 +1,5 @@
+// Images
+import logo from "../assets/imgs/logo.jpg";
 // React Router Components
 import { Link } from "react-router-dom";
 // Font Awesome Icons
@@ -10,7 +12,7 @@ export default function Footer() {
       <div className="footer-top">
         <div className="container">
           <div className="col">
-            <img src="src/assets/imgs/logo.jpg" alt="POWR eSports Store" />
+            <img src={logo} alt="POWR eSports Store" />
             <p>
               POWER eSports Team from 2010 till eternity. Digital Sports Fist
               Club Company

@@ -1,3 +1,6 @@
+// Images
+import logo from "../../assets/imgs/logo.jpg";
+
 // React Router Component
 import { Link } from "react-router-dom";
 
@@ -7,7 +10,7 @@ export default function NotFound() {
     <main className="not-found">
       <div className="container">
         <div className="header">
-          <img src="src/assets/imgs/not-found.png" alt="Not Found" />
+          <img src={logo} alt="Not Found" />
           <h2>404</h2>
         </div>
         <h1>Page Not Found</h1>

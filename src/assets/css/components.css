@@ -1,0 +1,521 @@
+/* Start Select Box */
+.select-box {
+  width: 90px;
+  border: var(--light-border);
+  border-radius: var(--radius-4);
+  position: relative;
+}
+
+.select-box:has(select:focus) {
+  border-color: var(--main-color);
+}
+
+.select-box select {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  font-size: 13px;
+}
+
+.select-box .icon {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  pointer-events: none;
+  transition: all var(--transition-duration);
+}
+
+.select-box:has(select:focus) .icon {
+  color: var(--main-color);
+  line-height: 1;
+  transform: translateY(-50%) rotate(180deg);
+}
+/* End Select Box */
+/* Start Input Bar */
+.input-bar {
+  position: relative;
+}
+
+.input-bar input {
+  display: block;
+  width: 100%;
+  padding: 10px 55px 10px 10px;
+  border: var(--light-border);
+  border-width: 2px;
+  border-radius: var(--radius-4);
+  transition: all var(--transition-duration);
+}
+
+.input-bar input:where(:hover, :focus) {
+  border-color: var(--main-color);
+}
+
+.input-bar input:focus {
+  box-shadow: 0 1px 10px 0 rgba(10, 10, 10, 0.4);
+}
+
+.input-bar button {
+  background-color: var(--main-color);
+  width: 50px;
+  height: 100%;
+  border-radius: 0 var(--radius-4) var(--radius-4) 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--white-color);
+  font-size: 14px;
+  transition: all var(--transition-duration);
+}
+
+.input-bar:has(input:focus) button {
+  background-color: transparent;
+  color: var(--main-color);
+}
+/* End Input Bar */
+/* Start Round Btn */
+.round-btn {
+  background-color: var(--white-color);
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-circle);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color var(--transition-duration);
+}
+
+.round-btn:where(:hover, .active) {
+  color: var(--main-color);
+}
+/* End Round Btn */
+/* Start Main Btn */
+.main-btn {
+  padding: 8px 25px;
+  border: 2px solid var(--main-color);
+  border-radius: var(--radius-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: var(--main-color);
+  font-size: 13px;
+  font-weight: bold;
+  transition: all var(--transition-duration);
+}
+
+.main-btn:where(:hover, .active) {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+/* End Main Btn */
+/* Start open Class */
+.open {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translate(0) !important;
+}
+/* End open Class */
+/* Start Image Container */
+.image-container {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container::before {
+  content: "";
+  background-image: linear-gradient(to right, transparent, #fff6);
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: skewX(-0.08turn) translateX(-180%);
+  pointer-events: none;
+}
+
+.image-container:hover::before {
+  transform: skewX(-0.08turn) translateX(275%);
+  transition: transform calc(var(--transition-duration) + 0.2s);
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+/* End Image Container */
+/* Start Product Box */
+.product-box {
+  background-color: var(--white-color);
+  padding: 10px;
+  border-radius: var(--radius-4);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-box.sold-out {
+  pointer-events: none;
+}
+
+.product-box.sold-out::before {
+  content: "SOLD OUT";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%) rotate(45deg);
+  color: var(--main-color);
+  white-space: nowrap;
+  text-shadow: 2px 2px 0 var(--black-color);
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.product-box .discount {
+  background-color: var(--main-color);
+  padding: 4px 8px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 2;
+  color: var(--white-color);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.product-box .options {
+  display: grid;
+  gap: 7px;
+  position: absolute;
+  top: 50px;
+  right: -30px;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-duration);
+}
+
+.product-box:hover .options {
+  right: 10px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.product-box .options button {
+  width: 34px;
+  height: 34px;
+  font-size: 14px;
+  box-shadow: none;
+}
+
+.product-box .options button.active {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+
+.product-box .image-container {
+  border-radius: inherit;
+}
+
+.product-box.sold-out .image-container {
+  opacity: 0.7;
+}
+
+.product-box .image-container img {
+  aspect-ratio: 1 / 1;
+}
+
+.product-box .text {
+  padding-top: 10px;
+}
+
+.product-box.sold-out .text {
+  opacity: 0.7;
+}
+
+.product-box .text .cat {
+  color: #777;
+  font-size: 13px;
+}
+
+.product-box .text h4 {
+  margin: 8px 0;
+  transition: color var(--transition-duration);
+}
+
+.product-box .text h4:hover {
+  color: var(--main-color);
+}
+
+.product-box .text h4 a {
+  display: block;
+}
+
+.product-box .text .stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: gold;
+  font-size: 15px;
+  margin-bottom: 13px;
+}
+
+.product-box .text .price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px 10px;
+}
+
+.product-box .text .price .new {
+  color: var(--main-color);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.product-box .text .price .old {
+  color: #777;
+  text-decoration: line-through;
+  font-size: 13px;
+}
+/* End Product Box */
+/* Start Empty Alert */
+.empty-alert {
+  color: var(--main-color);
+  text-align: center;
+  font-size: 22px;
+}
+/* End Empty Alert */
+/* Start Responsive Table */
+.responsive-table {
+  overflow-x: auto;
+}
+
+.responsive-table table {
+  min-width: 1000px;
+  width: 100%;
+  border-spacing: 0;
+}
+
+.responsive-table table td {
+  padding: 15px;
+}
+
+.responsive-table table thead td {
+  color: var(--main-color);
+  font-weight: bold;
+  border-bottom: 2px solid var(--black-color);
+}
+
+.responsive-table table tbody tr {
+  transition: all var(--transition-duration);
+}
+
+.responsive-table table tbody tr.removed {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-80px);
+}
+
+.responsive-table table tbody tr:not(:last-child) td {
+  border-bottom: var(--light-border);
+}
+
+.responsive-table table tbody a {
+  display: block;
+  width: fit-content;
+}
+
+.responsive-table table tbody img {
+  width: 80px;
+  border-radius: var(--radius-4);
+  aspect-ratio: 2 / 2;
+}
+
+.responsive-table table tbody h4 {
+  width: fit-content;
+  font-size: 15px;
+  transition: color var(--transition-duration);
+}
+
+.responsive-table table tbody h4:hover {
+  color: var(--main-color);
+}
+
+.responsive-table table tbody span {
+  color: #777;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.responsive-table table tbody input {
+  width: 60px;
+  border: var(--light-border);
+  padding: 5px;
+  font-size: 14px;
+}
+
+.responsive-table table tbody button {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  transition: color var(--transition-duration);
+}
+
+.responsive-table table tbody button:hover {
+  color: var(--main-color);
+}
+/* End Responsive Table */
+/* Start Input Field */
+.input-field {
+  position: relative;
+}
+
+.input-field input {
+  background-color: var(--white-color);
+  display: block;
+  width: 100%;
+  padding: 13px;
+  border: var(--light-border);
+  border-width: 2px;
+  border-radius: var(--radius-4);
+  font-size: 14px;
+  transition: border-color var(--transition-duration);
+}
+
+.input-field input:focus {
+  border-color: var(--main-color);
+}
+
+.input-field .select-box {
+  width: 100%;
+  border-width: 2px;
+  transition: border-color var(--transition-duration);
+}
+
+.input-field .select-box select {
+  padding: 13px;
+}
+
+.input-field .select-box .icon {
+  right: 13px;
+}
+
+.input-field .country-code {
+  background-color: var(--white-color);
+  width: 45px;
+  height: calc(100% - 4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: var(--light-border);
+  border-radius: var(--radius-4) 0 0 var(--radius-4);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 13px;
+  font-weight: bold;
+  user-select: none;
+  transition: border-right-color var(--transition-duration);
+}
+
+.input-field:has(input:focus) .country-code {
+  border-right-color: var(--main-color);
+}
+
+.input-field .country-code + input {
+  padding-left: 55px;
+}
+
+.input-field .show-psw-btn {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: color var(--transition-duration);
+}
+
+.input-field .show-psw-btn:where(:hover, .active) {
+  color: var(--main-color);
+}
+/* End Input Field */
+/* Start Overlay & Popup */
+.overlay {
+  background-color: rgb(0 0 0 / 85%);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-duration);
+}
+
+.overlay .popup {
+  background-color: var(--white-color);
+  width: 500px;
+  max-width: calc(100% - 30px);
+  padding: 30px;
+  border-radius: var(--radius-6);
+  position: relative;
+  text-align: center;
+  transform: scale(0);
+  transition: all var(--transition-duration) 0.1s;
+}
+
+.overlay.open .popup {
+  transform: scale(1);
+}
+
+.overlay .popup .close-btn {
+  background-color: var(--main-color);
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: var(--white-color);
+}
+
+.overlay .popup h2 {
+  margin: 20px 0;
+  font-size: 26px;
+}
+
+.overlay .popup .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.overlay .popup .buttons button {
+  border: var(--light-border);
+  padding: 8px 20px;
+  border-radius: var(--radius-4);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.overlay .popup .buttons .work-btn {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+
+.overlay .popup .buttons .cancel-btn {
+  background-color: var(--gray-color);
+  color: #777;
+}
+/* End Overlay & Popup */

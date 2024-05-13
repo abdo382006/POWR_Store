@@ -1,0 +1,123 @@
+/* Start Custom Variables */
+:root {
+  --main-color: #ce181e;
+  --white-color: #fff;
+  --black-color: #333;
+  --gray-color: #f2f2f2;
+  --main-padding: 40px;
+  --light-border: 1px solid #ddd;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-circle: 50%;
+  --box-shadow: 0 0 10px 0 #ddd;
+  --transition-duration: 0.5s;
+}
+/* End Custom Variables */
+/* Start Global Rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--gray-color);
+  color: var(--black-color);
+  font-family: "Rubik", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:where(input, select, textarea, button) {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+  font-size: 14px;
+}
+
+:where(input, textarea) {
+  caret-color: var(--main-color);
+}
+
+select {
+  appearance: none;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.splide__arrow {
+  background-color: var(--main-color) !important;
+  width: 38px !important;
+  height: 38px !important;
+}
+
+.splide__arrow svg {
+  fill: var(--white-color) !important;
+}
+
+.splide__pagination__page.is-active {
+  background-color: var(--main-color) !important;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small Screens */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium Screens */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* Extra Large Screens */
+@media (min-width: 1400px) {
+  .container {
+    width: 1370px;
+  }
+}
+/* End Global Rules */
+/* Start Animations */
+@keyframes loadingSpinner {
+  to {
+    transform: rotate(1turn);
+  }
+}
+/* End Animations */

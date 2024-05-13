@@ -1,6 +1,8 @@
 // React Toatify Library
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+// All Products Array
+import allProductsArr from "../assets/json/products.json";
 // Common Components
 import PageLoader from "./PageLoader";
 import Header from "./Header";
@@ -46,18 +48,26 @@ export default function App() {
       : 0;
 
   useEffect(() => {
-    fetch("http://localhost:8000/products")
-      .then((res) => res.json())
-      .then((data) => {
-        let products = data.map((p) => {
-          return {
-            ...p,
-            sarPrice: +p.price,
-            sarOldPrice: +p.oldPrice,
-          };
-        });
-        setAllProducts(products);
-      });
+    // fetch("http://localhost:8000/products")
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     let products = data.map((p) => {
+    //       return {
+    //         ...p,
+    //         sarPrice: +p.price,
+    //         sarOldPrice: +p.oldPrice,
+    //       };
+    //     });
+    //     setAllProducts(products);
+    //   });
+    let products = allProductsArr.products.map((p) => {
+      return {
+        ...p,
+        sarPrice: +p.price,
+        sarOldPrice: +p.oldPrice,
+      };
+    });
+    setAllProducts(products);
   }, []);
 
   if (allProducts.length === 0) {
